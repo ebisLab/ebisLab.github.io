@@ -1,11 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
+import Home from './components/Home'
+import Init from './components/Init'
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import './App.css';
+import Intro from './components/Intro';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
+      <div>
+        <Link to="/home">Home</Link>
+      </div>
+<Intro/>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,8 +27,11 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Route path="/home" component={Home}/>
+      <Router path="/" component={Init}/>
     </div>
+    </Router>
   );
 }
 
