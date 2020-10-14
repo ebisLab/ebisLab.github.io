@@ -13,7 +13,7 @@
     margin: 20px;
     flex: 1;
     min-width: 200px;
-    height: 200px;
+    /* height: 200px; */
 
 }
 
@@ -54,6 +54,18 @@ font-family: 'Zilla Slab Highlight', cursive; */
 
 .App-link {
   color: #61dafb;
+}
+
+.box1{
+background: crimson;
+}
+
+.box2{
+background: darksalmon;
+}
+
+.box3{
+background: indianred;
 }
 
 @keyframes App-logo-spin {
