@@ -13,7 +13,26 @@
     margin: 20px;
     flex: 1;
     min-width: 200px;
+    height: 200px;
 
+}
+
+h1{
+  /* font-family: 'La Belle Aurore', cursive;
+font-family: 'Libre Barcode 128 Text', cursive;
+font-family: 'Major Mono Display', monospace;
+font-family: 'Monofett', cursive;
+font-family: 'Plaster', cursive; */
+font-family: 'Playfair Display', serif;
+/* font-family: 'Reenie Beanie', cursive;
+font-family: 'Zilla Slab Highlight', cursive; */
+}
+
+.placement{
+  position: absolute;
+    margin-top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
