@@ -10,24 +10,10 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <div>
+      <div style={{background:"limegreen", position: "absolute",  width: "100%"}}>
         <Link to="/home">Home</Link>
       </div>
-<Intro/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+<Intro style={{marginTop:"-50px"}}/>
       <Route path="/home" component={Home}/>
       <Router path="/" component={Init}/>
     </div>
