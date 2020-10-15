@@ -35,6 +35,18 @@ font-family: 'Zilla Slab Highlight', cursive; */
     transform: translate(-50%, -50%);
 }
 
+.header{
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+    font-weight: bold;
+  position: absolute;
+    top: 50%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, -2em);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -10,23 +10,25 @@ export default function Intro() {
                 <div style={{background: "pink", width:"100%"}}>
                 <div style={{position:"relative"}}>
                         <h1 className="placement">
-                        <motion.span exit={{opacity: 0}}>Go to </motion.span>
+                        <motion.span exit={{opacity: 0}}>Go to 
                         <a href="http://www.eunicebaiden.com">E.B.'s Folio</a>
+                        </motion.span>
                         </h1>
                     </div>
                     
                 </div>
-                <div style={{background: "gold", width:"100%"}}>
-                    <div style={{position:"relative"}}>
-                        <h1 className="placement">
-                        Continue to
+                <div style={{background: "gold", width:"100%", position:"relative"}}>
+                    <div
+                     className="header"
+                    //  style={{position: "absolute", top: "50%", left: 0, bottom: 0, right: 0}}
+                     >
+                        <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div>
+                        E.B.'s Lab
+                        {/* <h1 >
+                        <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div>
                         E.B.'s lab
-                        {/* <motion.span exit={{opacity: 0}}> */}
-                            <motion.img transition={transition} whileHover={{scale:1.1}} style={{height:"250px"}} exit={{opacity: 0}}  alt="something" src="https://i.imgur.com/PXeqdsH.jpg"/>
-                        {/* </motion.span> */}
-                        <motion.div exit={{opacity:0}} transition={transition}>Some words here boah bio</motion.div>
                          
-                        </h1>
+                        </h1> */}
                     </div>
                     
                 </div>

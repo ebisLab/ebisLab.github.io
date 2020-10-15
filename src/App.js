@@ -6,23 +6,28 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 import {AnimatePresence} from 'framer-motion'
 import './App.css';
 import Intro from './components/Intro';
+import Test from './components/Test';
 
 function App() {
   return (
     <Router>
     <div className="App">
-    <div style={{background:"limegreen", position: "absolute",  width: "100%"}}>
+    <div style={{background:"limegreen", position: "absolute",  width: "100%", zIndex: 1}}>
       <Link to="/home">Home</Link>
     </div>
       <Route render={({location})=>(
-    <AnimatePresence exitBeforeEnter location={location}>
+    <AnimatePresence exitBeforeEnter>
+          {/* <Intro style={{marginTop:"-50px"}}/> */}
 
 
-    <Intro style={{marginTop:"-50px"}}/>
-    {/* <Switch location={location} key={location.pathname}> */}
-    <Route path="/home" component={Home}/>
-    <Router path="/" component={Init}/>
-    {/* </Switch> */}
+
+    <Switch location={location} key={location.pathname}>
+
+{/* <Route path="/home" component={Test}/> */}
+<Router exact path="/"><Intro/></Router>
+    <Route exact path="/home"><Test/></Route>
+
+    </Switch>
 
     </AnimatePresence>
       )}/>
