@@ -7,7 +7,7 @@ export default function Intro() {
     return (
         <div>
             <div style={{display: "inline-flex", height:"100vh", width:"100%"}}>
-                <div style={{background: "pink", width:"100%"}}>
+                <div style={{background: "peachpuff", width:"100%"}}>
                 <div style={{position:"relative"}}>
                         <h1 className="placement">
                         <motion.span exit={{opacity: 0}}>Go to 
@@ -17,18 +17,11 @@ export default function Intro() {
                     </div>
                     
                 </div>
-                <div style={{background: "gold", width:"100%", position:"relative"}}>
+                <div style={{background: "#131212", width:"100%", position:"relative", color:"peachpuff"}}>
                     <div
-                     className="header"
-                    //  style={{position: "absolute", top: "50%", left: 0, bottom: 0, right: 0}}
-                     >
+                     className="header" >
                         <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div>
                         E.B.'s Lab
-                        {/* <h1 >
-                        <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div>
-                        E.B.'s lab
-                         
-                        </h1> */}
                     </div>
                     
                 </div>

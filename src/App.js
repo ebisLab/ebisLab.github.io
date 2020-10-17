@@ -12,18 +12,15 @@ function App() {
   return (
     <Router>
     <div className="App">
-    <div style={{background:"limegreen", position: "absolute",  width: "100%", zIndex: 1}}>
+    <div style={{
+      position: "absolute",  width: "100%", zIndex: 1}}>
       <Link to="/home">Home</Link>
     </div>
       <Route render={({location})=>(
     <AnimatePresence exitBeforeEnter>
-          {/* <Intro style={{marginTop:"-50px"}}/> */}
-
-
 
     <Switch location={location} key={location.pathname}>
 
-{/* <Route path="/home" component={Test}/> */}
 <Router exact path="/"><Intro/></Router>
     <Route exact path="/home"><Test/></Route>
 
@@ -31,15 +28,6 @@ function App() {
 
     </AnimatePresence>
       )}/>
-    {/* // <AnimatePresence exitBeforeEnter>
-    //   <div style={{background:"limegreen", position: "absolute",  width: "100%"}}>
-    //     <Link to="/home">Home</Link>
-    //   </div>
-
-    //   <Intro style={{marginTop:"-50px"}}/>
-    //   <Route path="/home" component={Home}/>
-    //   <Router path="/" component={Init}/>
-    //   </AnimatePresence> */}
 
     </div>
     </Router>

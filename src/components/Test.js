@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import { motion } from "framer-motion"
+import { motion, useTransform, useViewportScroll } from "framer-motion"
+import Home from './Home';
 
 const transition={duration: .6, ease: [.43, .13, .23, .96]}
 const container = {
@@ -17,17 +18,18 @@ const container = {
   };
   
   const boxitem = {
-    hidden: { marginTop: 20, width:"100%" },
+    hidden: {width:"100%" },
     visible: {
       marginTop: 0,
-    //   opacity:0,
-    //   background:"red",
      width:"0"
     }
   };
 
 
 export default function Test() {
+    const{scrollXProgress}=useViewportScroll()
+    const scale= useTransform(scrollXProgress, [0,1], [1,1.15]) //between 0 and 1 -> start and end
+
     return (
         <div>
             <div style={{display: "inline-flex", height:"100vh", width:"100%"}}>
@@ -35,14 +37,14 @@ export default function Test() {
                 {/* overlayhere */}
 
             <div style={{width:"100%", display:"inline-flex", position:"relative"}}>
-            <div style={{width: "100%", background:"gold", position:"absolute", zIndex:-1, top:0, left:0, right:0, bottom:0}}></div>
+            <div style={{width: "100%", background:"#131212", position:"absolute", zIndex:-1, top:0, left:0, right:0, bottom:0}}></div>
 
                 <motion.div
         variants={boxitem}
         transition={transition}
         initial="hidden"
         animate="visible"
-                style={{width: "100%", background:"pink", position:"absolute", zIndex: -1, top:0, left:0, right:0, bottom:0
+                style={{width: "100%", background:"peachpuff", position:"absolute",  top:0, left:0, right:0, bottom:0
                 }}></motion.div>
                 
                 
@@ -51,30 +53,26 @@ export default function Test() {
 
 
 
-                <div style={{background: "gold", width:"100%"}}>
-                    <div   style={{
-                            top:"44.3%",
-                            position:"relative"
-                            }}>
-                    <h1 
-                    // className="placement"
+                <div style={{background: "#131212", width:"100%", color:"peachpuff"}}>
+                    <motion.div   
+                    initial={{fontSize:"1em"}}
+                    style={{ top:"44.3%", position:"relative"}}
+                    animate={{ fontSize:"3em", transform: "translate(-50%, -125%)", transition:{delay:.5, ...transition}}}
                     >
-                        {/* <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div> */}
-                        {/* <div style={{top:"unset", left: "420px", transform: "translate(591px, 337px)", position:"fixed"}}>E.B.'s lab</div> */}
-                        {/* <div style={{top:"unset", left: "414px", transform: "translate(41.7vw, 337px)", position:"fixed"}}>E.B.'s lab</div> */}
-                        <div 
-                        // style={{
-                        //     top:"47.2%", 
-                        //     left: "70.1%", 
-                        //     position:"absolute"
-                        //     }}
-                            >E.B.'s Lab</div>
+                    <h1>
+                        <div>E.B.'s Lab</div>
                          
                         </h1>
-                    </div>
-                    
+                    </motion.div>
                 </div>
+
+{/* <video src="/bgvid.mp4" autoplay="true" loop playsinline muted type="video/mp4" ></video> */}
+
+
             </div>
+            <Home />
+
+
             </div>
 
     )

@@ -1,5 +1,18 @@
+body{
+  background: #131212
+}
+
 .App {
   text-align: center;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .App-logo {
@@ -8,12 +21,12 @@
 }
 
 .box{
-  background-color: yellowgreen;
+  background-color: darksalmon;
    padding: 20px;
     margin: 20px;
     flex: 1;
     min-width: 200px;
-    /* height: 200px; */
+    height: 200px;
 
 }
 
