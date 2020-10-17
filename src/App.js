@@ -7,24 +7,28 @@ import {AnimatePresence} from 'framer-motion'
 import './App.css';
 import Intro from './components/Intro';
 import Test from './components/Test';
+import About from './components/About';
 
 function App() {
   return (
     <Router>
     <div className="App">
-    <div style={{
-      position: "absolute",  width: "100%", zIndex: 1}}>
+    {/* <div style={{
+      position: "absolute",  width: "100%", zIndex: 1, background: "peachpuff", padding: "20px"}}>
       <Link to="/home">Home</Link>
-    </div>
+    </div> */}
       <Route render={({location})=>(
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter initial={true} >
 
     <Switch location={location} key={location.pathname}>
 
-<Router exact path="/"><Intro/></Router>
+<Route exact path="/"><Intro/></Route>
     <Route exact path="/home"><Test/></Route>
+    {/* <Route exact path="/about"><About/></Route> */}
 
     </Switch>
+    <Route exact path="/about"><About/></Route>
+
 
     </AnimatePresence>
       )}/>

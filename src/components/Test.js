@@ -24,6 +24,18 @@ const container = {
      width:"0"
     }
   };
+  const boxitem2 = {
+    hidden: {opacity:0, marginTop: "-50px",},
+    visible: {
+      marginTop: "0px",
+      opacity:1,
+      transition: {
+        delay: 2.5,
+        // when: "beforeChildren",
+        // staggerChildren: 3.0
+      }
+    }
+  };
 
 
 export default function Test() {
@@ -32,6 +44,17 @@ export default function Test() {
 
     return (
         <div>
+                <motion.div 
+                        variants={boxitem2}
+                        transition={transition}
+                        initial="hidden"
+                        animate="visible"
+                style={{
+      position: "absolute",  width: "100%", zIndex: 1, padding: "20px"}}>
+      <Link to="/home" style={{padding:"10px", color:"peachpuff"}}>Home</Link>
+      <Link to="/about" style={{padding:"10px", color:"peachpuff"}}>About</Link>
+    </motion.div>
+
             <div style={{display: "inline-flex", height:"100vh", width:"100%"}}>
 
                 {/* overlayhere */}
@@ -66,11 +89,8 @@ export default function Test() {
                     </motion.div>
                 </div>
 
-{/* <video src="/bgvid.mp4" autoplay="true" loop playsinline muted type="video/mp4" ></video> */}
-
-
             </div>
-            <Home />
+            <Home/>
 
 
             </div>

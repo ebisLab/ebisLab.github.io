@@ -59,7 +59,11 @@ export default function Home() {
 
 
     return (
-        <motion.div                 
+        <motion.div 
+        exit={{ 
+            y: "0%",
+            opacity: 0
+          }}                
         className="container"
         variants={container}
         transition={transition}
