@@ -1,7 +1,8 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { motion, useTransform, useViewportScroll } from "framer-motion"
 import Home from './Home';
+import Contact from './Contact';
 
 const transition={duration: .6, ease: [.43, .13, .23, .96]}
 const container = {
@@ -53,6 +54,7 @@ export default function Test() {
       position: "absolute",  width: "100%", zIndex: 1, padding: "20px"}}>
       <Link to="/home" style={{padding:"10px", color:"peachpuff"}}>Home</Link>
       <Link to="/about" style={{padding:"10px", color:"peachpuff"}}>About</Link>
+      <Link to="/contact" style={{padding:"10px", color:"peachpuff"}}>Contact</Link>
     </motion.div>
 
             <div style={{display: "inline-flex", height:"100vh", width:"100%"}}>
@@ -91,6 +93,7 @@ export default function Test() {
 
             </div>
             <Home/>
+            {/* <Contact/> */}
 
 
             </div>

@@ -8,6 +8,7 @@ import './App.css';
 import Intro from './components/Intro';
 import Test from './components/Test';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -25,9 +26,10 @@ function App() {
 <Route exact path="/"><Intro/></Route>
     <Route exact path="/home"><Test/></Route>
     {/* <Route exact path="/about"><About/></Route> */}
-
+    <Route path="/contact"><Contact/></Route>
     </Switch>
     <Route exact path="/about"><About/></Route>
+
 
 
     </AnimatePresence>

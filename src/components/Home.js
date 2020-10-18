@@ -69,7 +69,8 @@ export default function Home() {
         transition={transition}
         initial="hidden"
         animate="visible"
-        style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}>
+        style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}
+        >
             <div style={{display:"flex"}}>
                 <div style={{margin: "20px"}}>Link 1</div>
                 <div style={{margin: "20px"}}>Link 2</div>
