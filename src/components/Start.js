@@ -54,6 +54,9 @@ export default function Test() {
                 style={{
       position: "absolute",  width: "100%", zIndex: 1, padding: "20px"}}>
           <Navigation />
+      {/* <Link to="/home" style={{padding:"10px", color:"peachpuff"}}>Home</Link>
+      <Link to="/about" style={{padding:"10px", color:"peachpuff"}}>About</Link>
+      <Link to="/contact" style={{padding:"10px", color:"peachpuff"}}>Contact</Link> */}
     </motion.div>
 
             <div style={{display: "inline-flex", height:"100vh", width:"100%"}}>
@@ -91,7 +94,7 @@ export default function Test() {
                 </div>
 
             </div>
-            {/* <Home/> */}
+            <Home/>
             {/* <Contact/> */}
 
 

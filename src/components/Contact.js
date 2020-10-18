@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion"
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
@@ -60,7 +61,12 @@ export default function Contact() {
         initial="hidden"
         animate="visible"
         style={{color: "peachpuff", margin: "0px 7%", position:"relative"}}>
-Something interesitng
+<div style={{background: "dimgray", color:"peachpuff", margin: "0px 7%", position:"relative", top:"-300px"}}
+>
+
+            <div style={{color:"peachpuff"}}>PUT YOUR CONTENT HERE</div>
+
+            </div>
             
         </motion.div>
 

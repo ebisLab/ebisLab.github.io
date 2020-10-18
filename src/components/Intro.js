@@ -18,11 +18,13 @@ export default function Intro() {
                     
                 </div>
                 <div style={{background: "#131212", width:"100%", position:"relative", color:"peachpuff"}}>
+                    <Link to="/home">
                     <div
                      className="header" >
                         <motion.div exit={{opacity:0}} transition={transition}>Continue to</motion.div>
                         E.B.'s Lab
                     </div>
+                    </Link>
                     
                 </div>
             </div>
