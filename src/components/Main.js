@@ -18,9 +18,8 @@ export default function Main() {
                             <div 
                       
                 style={{
-      position: "absolute",  width: "100%", zIndex: 1, padding: "20px"}}>
+      position: "absolute",  width: "100%", zIndex: 1, padding: "20px 0"}}>
           <Navigation/>
-          {/* <Link to="/home3">About 3</Link> */}
     </div>
 
     {/* END MENU COMPONENT */}

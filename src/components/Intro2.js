@@ -7,36 +7,16 @@ import Navigation from './Navigation';
 
 const transition={duration: .6, ease: [.43, .13, .23, .96]}
 
-const boxitem = {
-    hidden: {width:"100%" },
-    visible: {
-      marginTop: 0,
-     width:"0"
-    }
-  };
-  const boxitem2 = {
-    hidden: {opacity:0, marginTop: "-50px",},
-    visible: {
-      marginTop: "0px",
-      opacity:1,
-      transition: {
-        delay: 2.5,
-        // when: "beforeChildren",
-        // staggerChildren: 3.0
-      }
-    }
-  };
 export default function Intro() {
     return (
         <motion.div 
-        className="orangy"
         exit={{transition:{duration:8.0, background: "orange"}}}
         >
         <motion.div 
         exit={{opacity:1, transition:{delay:2, ...transition}}}
  
         style={{
-position: "absolute",  width: "100%", zIndex: 1, padding: "20px", opacity:0, color:"peachpuff"}}>
+position: "absolute",  width: "100%", zIndex: 1, padding: "20px 0px", right: 0, opacity:0, color:"peachpuff"}}>
 <Navigation />
 </motion.div>
 

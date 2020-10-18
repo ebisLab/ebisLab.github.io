@@ -11,7 +11,21 @@ const container = {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 1.5,
+        delay: .6,
+        when: "beforeChildren",
+        staggerChildren: 3.0
+      }
+    }
+  };
+
+  const container2 = {
+    hidden: { marginTop: 0, opacity: 1 },
+    visible: {
+        marginTop: 50,
+      opacity: 0,
+      scale: 1,
+      transition: {
+        delay: .2,
         when: "beforeChildren",
         staggerChildren: 3.0
       }
@@ -60,10 +74,13 @@ export default function Home() {
 
     return (
         <motion.div 
-        exit={{ 
-            y: "0%",
-            opacity: 0
-          }}                
+        exit={{        
+            marginTop: 50,
+            opacity: 0,
+            scale: 1,
+            transition: {
+              delay: .2
+            }}}                
         className="container"
         variants={container}
         transition={transition}
@@ -72,7 +89,7 @@ export default function Home() {
         style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}
         >
             <div style={{display:"flex"}}>
-                <div style={{margin: "20px"}}>Link 1</div>
+                <div style={{margin: "20px"}}>Link 1A</div>
                 <div style={{margin: "20px"}}>Link 2</div>
                 <div style={{margin: "20px"}}>Link 3</div>
                 <div style={{margin: "20px"}}>Link 3</div>

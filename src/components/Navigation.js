@@ -13,8 +13,6 @@ const boxitem2 = {
       opacity:1,
       transition: {
         delay: 2.5,
-        // when: "beforeChildren",
-        // staggerChildren: 3.0
       }
     }
   };

@@ -12,7 +12,7 @@ const container = {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 1.5,
+        delay: .6,
         when: "beforeChildren",
         staggerChildren: 3.0
       }
@@ -39,7 +39,7 @@ export default function About() {
             <p>
                 With so many new technologies being developed in the web development world, who wouldn't want to play around with them?
                 I've dedicated this space as my playground to experiment and see how they pair with the user experience.
-                Some projects showcase my art work ranging from sketches, digital illustrations, graphic design projects, others are full on programs I've developed over the years.  
+                Some projects showcase my art work ranging from sketches, digital illustrations, graphic design projects; Others are full-on apps I've developed over the years.  
                 Each project I showcase is a reminder that no matter how random or inactive it is, it's brought me closer to being a better developer. 
                 </p>
             </div>
