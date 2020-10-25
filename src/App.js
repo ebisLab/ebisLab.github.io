@@ -19,8 +19,12 @@ function App() {
     <Switch location={location} key={location.pathname}>
 
 <Route exact path="/"><Intro2/></Route>
-    <Route exact path="/home2"><Test/></Route>
-    <Route exact path="/home"><Main/></Route>
+
+    <Route exact path="/about" render={()=> <About/> }/>
+
+    <Route exact path="/home" render={()=> <Main/> }/>
+
+
     
     </Switch>
     </AnimatePresence>

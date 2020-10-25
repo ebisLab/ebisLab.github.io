@@ -11,7 +11,21 @@ const container = {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 1.5,
+        delay: .6,
+        when: "beforeChildren",
+        staggerChildren: 3.0
+      }
+    }
+  };
+
+  const container2 = {
+    hidden: { marginTop: 0, opacity: 1 },
+    visible: {
+        marginTop: 50,
+      opacity: 0,
+      scale: 1,
+      transition: {
+        delay: .2,
         when: "beforeChildren",
         staggerChildren: 3.0
       }
@@ -46,7 +60,7 @@ const container = {
     }
   };
 
-export default function Home2() {
+export default function Home() {
     const [data, setData]=useState([])
     const [freezeScroll,setFeezeScroll]=useState(false)
     useEffect(()=>{
@@ -60,10 +74,13 @@ export default function Home2() {
 
     return (
         <motion.div 
-        exit={{ 
-            y: "0%",
-            opacity: 0
-          }}                
+        exit={{        
+            marginTop: 50,
+            opacity: 0,
+            scale: 1,
+            transition: {
+              delay: .2
+            }}}                
         className="container"
         variants={container}
         transition={transition}
@@ -72,11 +89,19 @@ export default function Home2() {
         style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}
         >
             <div style={{display:"flex"}}>
-                <div style={{margin: "20px"}}>Link 1</div>
+                <div style={{margin: "20px"}}>Link 1A</div>
                 <div style={{margin: "20px"}}>Link 2</div>
                 <div style={{margin: "20px"}}>Link 3</div>
                 <div style={{margin: "20px"}}>Link 3</div>
             </div>
+
+                            <ul>
+                <li onClick={() => setQuery(null)}>All</li>
+                    <li data-tab="illustrations" className="something" onClick={filterthrough}>Illustrations</li>
+                    <li data-tab="app" onClick={filterthrough}>App</li>
+                    <li onClick={filterthrough}>FullStack</li>
+                    <li data-tab="ux"onClick={filterthrough}>UI</li>
+                </ul>
 
 
             

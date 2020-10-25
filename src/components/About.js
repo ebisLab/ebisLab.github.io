@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import { motion } from "framer-motion"
 import Navigation from './Navigation';
 
@@ -19,11 +19,15 @@ const container = {
     }
   };
 export default function About() {
+    const {id}=useParams()
+    
     return (
+ 
 
-        <motion.div 
+        <motion.div
+        key="2"
         exit={{ 
-            y: "0%",
+            marginTop: "-50px",
             opacity: 0
           }}                
         className="container"

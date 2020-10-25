@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion"
+import {BrowserRouter as Router, Route, Link, Switch, useLocation} from "react-router-dom"
 
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
@@ -63,6 +64,11 @@ const container = {
 export default function Home() {
     const [data, setData]=useState([])
     const [freezeScroll,setFeezeScroll]=useState(false)
+
+    const [query, setQuery] = useState('')
+
+
+    
     useEffect(()=>{
         axios.get("https://api.github.com/search/repositories?q=topic:ebislab")
         .then(res=>
@@ -70,17 +76,18 @@ export default function Home() {
             setFeezeScroll(true)
             )
     },[])
-
+    const filterthrough = (e)=>{
+        e.preventDefault()
+        setQuery(data.items.filter(el=>el.name.includes(`${e.target.dataset.tab}`)))
+    }
 
     return (
+
+       
         <motion.div 
-        exit={{        
-            marginTop: 50,
-            opacity: 0,
-            scale: 1,
-            transition: {
-              delay: .2
-            }}}                
+        key="1"
+        // exit={{ marginTop: "-50%", opacity: 0, transition }}
+            exit={{opacity:0}}  
         className="container"
         variants={container}
         transition={transition}
@@ -88,30 +95,52 @@ export default function Home() {
         animate="visible"
         style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}
         >
-            <div style={{display:"flex"}}>
-                <div style={{margin: "20px"}}>Link 1A</div>
-                <div style={{margin: "20px"}}>Link 2</div>
-                <div style={{margin: "20px"}}>Link 3</div>
-                <div style={{margin: "20px"}}>Link 3</div>
-            </div>
+
+            <ul style={{display:"flex", listStyleType:"none"}}>
+            <li style={{margin: "20px"}} onClick={() => setQuery(null)}>All</li>
+                    <li data-tab="folio" className="something" style={{margin: "20px"}} onClick={filterthrough}>Folio</li>
+                    <li data-tab="0" style={{margin: "20px"}} onClick={filterthrough}>Group pic</li>
+                    <li style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
+                    <li data-tab="ux" style={{margin: "20px"}} onClick={filterthrough}>UI</li>
+                </ul>
 
 
             
             <div 
             style={{display:"flex", flexWrap:"wrap", flexGrow:"1"}}>                
-                {data.items && data.items.map(item=>
+
+                {query ?(query.map((item,key)=> <motion.div 
+                className="box" key={key} info={item} 
+                style={{backgroundImage:`url(https://github.com/ebisLab/${item.name}/tree/master/public/img.png/?raw=true)`|| `url(https://github.com/ebisLab/${item.name}/blob/master/client/public/img.png/?raw=true)`, 
+                width:"100%", 
+                background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, 
+                backgroundSize:"cover"}} 
+                variants={boxitem} 
+                key={item.id}>
+                        {item.name}
+                        <div>Github</div>
+                    <div>Website</div>
+                        </motion.div>)): 
                 <>
-                {console.log(freezeScroll == true ?"its frozen":"its not frozen")}
-                    <motion.div className="box" style={{backgroundImage:`url(https://github.com/ebisLab/${item.name}/tree/master/public/img.png/?raw=true)`|| `url(https://github.com/ebisLab/${item.name}/blob/master/client/public/img.png/?raw=true)`, width:"100%", background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, backgroundSize:"cover"}} variants={boxitem} key={item.id}>
+{                (data.items && data.items.map((item, key)=> (
+                    <>
+                <motion.div className="box" key={key} info={item} style={{backgroundImage:`url(https://github.com/ebisLab/${item.name}/tree/master/public/img.png/?raw=true)`|| `url(https://github.com/ebisLab/${item.name}/blob/master/client/public/img.png/?raw=true)`, width:"100%", background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, backgroundSize:"cover"}} variants={boxitem} key={item.id}>
                         {item.name}
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>
 
-                    </>
-                    )} 
+                      
 
-                    <motion.div className="box" style={{width:"100%", background:`url(/img/img.png)`, backgroundSize:"cover"}} variants={boxitem2}>
+                                
+                      
+
+                </>
+
+                
+                )))}
+                 {/* -------- REFACTOR THIS PART --------- */}
+                <motion.div className="box" style={{width:"100%", background:`url(/img/img.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
@@ -160,12 +189,22 @@ export default function Home() {
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>           
+{/* -----  END REFACTOR THIS PART ----- */}
+
+                </>
+        
+                
+                }
+
+
              
 
 
             </div>
 
-            
+            <Link to="/about">About</Link>
+
         </motion.div>
+
     )
 }
