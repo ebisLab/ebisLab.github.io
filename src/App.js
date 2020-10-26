@@ -1,37 +1,38 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
-import {AnimatePresence} from 'framer-motion'
+import {BrowserRouter as Router, Route, Link, Switch, useLocation, useRouteMatch} from "react-router-dom"
+import {AnimatePresence, motion} from 'framer-motion'
 import './App.css';
 import Intro from './components/Intro';
 import Intro2 from './components/Intro2';
-import Test from './components/Test';
 import About from './components/About';
 import Contact from './components/Contact';
 import Main from './components/Main';
+import Navigation from './components/Navigation';
+import Home from './components/Home';
+
+const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
 function App() {
+  const location=useLocation()
+  const match=useRouteMatch("/")
   return (
-    <Router>
     <div className="App">
-      <Route render={({location})=>(
-    <AnimatePresence exitBeforeEnter initial={true} >
+  
+  <Navigation />
+        <AnimatePresence exitBeforeEnter>
+          
+        {/* <Navigation />   */}
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/" component={Intro2} />
+            <Route path="/about" component={About} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/contact" component={Contact} />
+          </Switch>
+        </AnimatePresence>
 
-    <Switch location={location} key={location.pathname}>
-
-<Route exact path="/"><Intro2/></Route>
-
-    <Route exact path="/about" render={()=> <About/> }/>
-
-    <Route exact path="/home" render={()=> <Main/> }/>
-
-
-    
-    </Switch>
-    </AnimatePresence>
-      )}/>
 
     </div>
-    </Router>
+
   );
 }
 

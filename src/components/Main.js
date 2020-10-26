@@ -14,7 +14,7 @@ export default function Main() {
    const location= useLocation()
     return (
         <div>
-            <Router>
+            {/* <Router> */}
 
             {/* MENU COMPONENT  */}
                             <div 
@@ -42,7 +42,7 @@ export default function Main() {
                     </div>
                 </div>
 
-            
+      
             </div>
             <AnimatePresence exitBeforeEnter>
             {/* <Switch location={location} key={location.pathname}> */}
@@ -54,7 +54,7 @@ export default function Main() {
             </AnimatePresence>
 
             
-            </Router>
+            {/* </Router> */}
 
             </div>
             

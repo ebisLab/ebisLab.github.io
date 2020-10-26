@@ -1,18 +1,20 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion"
+import imgdata from '../data/imgdata.json'
 import {BrowserRouter as Router, Route, Link, Switch, useLocation} from "react-router-dom"
 
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
 const container = {
-    hidden: { marginTop: 50, opacity: 0 },
+    hidden: { marginTop: 150, opacity: 0 },
     visible: {
         marginTop: 0,
       opacity: 1,
       scale: 1,
       transition: {
         delay: .6,
+        duration:1.5,
         when: "beforeChildren",
         staggerChildren: 3.0
       }
@@ -66,6 +68,7 @@ export default function Home() {
     const [freezeScroll,setFeezeScroll]=useState(false)
 
     const [query, setQuery] = useState('')
+    const [extQuery, setExtQuery]=useState('')
 
 
     
@@ -79,6 +82,7 @@ export default function Home() {
     const filterthrough = (e)=>{
         e.preventDefault()
         setQuery(data.items.filter(el=>el.name.includes(`${e.target.dataset.tab}`)))
+        setExtQuery(imgdata.filter(el=>el.includes(`${e.target.dataset.tab}`)))
     }
 
     return (
@@ -87,19 +91,19 @@ export default function Home() {
         <motion.div 
         key="1"
         // exit={{ marginTop: "-50%", opacity: 0, transition }}
-            exit={{opacity:0}}  
+        exit={{marginTop:"300px", opacity:0}}  
         className="container"
         variants={container}
         transition={transition}
         initial="hidden"
         animate="visible"
-        style={{background: "dimgray", margin: "0px 7%", position:"relative", top:"-300px"}}
+        style={{background: "lightgrey", margin: "0px 7%", marginTop:"300px" }}
         >
 
             <ul style={{display:"flex", listStyleType:"none"}}>
             <li style={{margin: "20px"}} onClick={() => setQuery(null)}>All</li>
                     <li data-tab="folio" className="something" style={{margin: "20px"}} onClick={filterthrough}>Folio</li>
-                    <li data-tab="0" style={{margin: "20px"}} onClick={filterthrough}>Group pic</li>
+                    <li data-tab="0" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
                     <li style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="ux" style={{margin: "20px"}} onClick={filterthrough}>UI</li>
                 </ul>
@@ -145,50 +149,56 @@ export default function Home() {
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>    
-
                      <motion.div className="box" style={{width:"100%", background:`url(/img/img2.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>
-
                         <motion.div className="box" style={{width:"100%", background:`url(/img/img3.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>   
-
                       <motion.div className="box" style={{width:"100%", background:`url(/img/img4.jpg)`, backgroundSize:"cover"}} variants={boxitem2}>
-                        Illustrations
+                        RECORDSSSSSS Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>   
-
-
                         <motion.div className="box" style={{width:"100%", background:`url(/img/img5.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div> 
-
                         <motion.div className="box" style={{width:"100%", background:`url(/img/img6.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>     
-
-
                         <motion.div className="box" style={{width:"100%", background:`url(/img/img7.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
                         </motion.div>  
-
-                                                <motion.div className="box" style={{width:"100%", background:`url(/img/img8.png)`, backgroundSize:"cover"}} variants={boxitem2}>
+                      <motion.div className="box" style={{width:"100%", background:`url(/img/img8.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                         Illustrations
                         <div>Github</div>
                     <div>Website</div>
-                        </motion.div>           
+                        </motion.div>   
+////
+                        {/* {imgdata.map(item=>(
+                          <motion.div key={item.bg} className="box" style={{width:"100%", background:`url(/img/${item.bg})`, backgroundSize:"cover"}} variants={boxitem2}>
+                          Illustrations
+                          <div>Github</div>
+                      <div>Website</div>
+                          </motion.div> 
+                        ))}     */}
+
+
+                        /////
+
+                        
+
+
 {/* -----  END REFACTOR THIS PART ----- */}
 
                 </>
@@ -201,9 +211,6 @@ export default function Home() {
 
 
             </div>
-
-            <Link to="/about">About</Link>
-
         </motion.div>
 
     )

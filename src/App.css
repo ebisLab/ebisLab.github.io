@@ -41,6 +41,17 @@ font-family: 'Playfair Display', serif;
 font-family: 'Zilla Slab Highlight', cursive; */
 }
 
+.cols a{
+color:peachpuff;
+margin: 15px
+}
+
+.about{
+  font-size: 3em;
+  text-align: left;
+  font-family: 'Zilla Slab Highlight';
+}
+
 .placement{
   position: absolute;
     margin-top: 50%;

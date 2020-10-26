@@ -1,12 +1,10 @@
 import React from 'react';
-import {Link, useParams} from "react-router-dom";
 import { motion } from "framer-motion"
-import Navigation from './Navigation';
 
 
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 const container = {
-    hidden: { marginTop: 50, opacity: 0 },
+    hidden: { marginTop: 100, opacity: 0, transition:{duration: 2} },
     visible: {
         marginTop: 0,
       opacity: 1,
@@ -19,32 +17,35 @@ const container = {
     }
   };
 export default function About() {
-    const {id}=useParams()
     
     return (
  
 
         <motion.div
         key="2"
-        exit={{ 
-            marginTop: "-50px",
-            opacity: 0
-          }}                
+        exit={{ opacity: 0, marginTop: "500px"}}                
         className="container"
         variants={container}
         transition={transition}
         initial="hidden"
         animate="visible"
-        style={{color: "peachpuff", margin: "0px 7%", position:"relative"}}>
-<div style={{background: "dimgray", color:"peachpuff", margin: "0px 7%", position:"relative", top:"-300px"}}
->
+        style={{color: "peachpuff", margin: "0px 7%", marginTop: "200px"
+        // position:"relative"
+        }}>
+          <div className="about" 
+          style={{
+            // background: "dimgray", 
+          color:"peachpuff", margin: "0px 7%", position:"relative", 
+          // top:"300px"
+          }}
+          >
 
             <div style={{color:"peachpuff"}}>
             <p>
-                With so many new technologies being developed in the web development world, who wouldn't want to play around with them?
-                I've dedicated this space as my playground to experiment and see how they pair with the user experience.
-                Some projects showcase my art work ranging from sketches, digital illustrations, graphic design projects; Others are full-on apps I've developed over the years.  
-                Each project I showcase is a reminder that no matter how random or inactive it is, it's brought me closer to being a better developer. 
+                With so many new technologies being developed in the web development world, who wouldn't want to play around with them?</p>
+               <p> I've dedicated this space as my playground to experiment and see how they pair with the user experience.
+                Some projects showcase my art work ranging from sketches, digital illustrations, graphic design projects; Others are full-on apps I've developed over the years. </p> 
+                <p>Each project I showcase is a reminder that no matter how random or inactive it is, it's brought me closer to being a better developer. 
                 </p>
             </div>
 

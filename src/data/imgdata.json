@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "bg": "img.png",
+        "type": "illustration"
+    },
+    {
+        "id": 1,
+        "bg": "img2.png",
+        "type": "illustration"
+    },
+    {
+        "id": 2,
+        "bg": "img3.png",
+        "type": "illustration"
+    },
+    {
+        "id": 3,
+        "bg": "img4.png",
+        "type": "illustration"
+    },
+    {
+        "id": 4,
+        "bg": "img5.png",
+        "type": "illustration"
+    },
+    {
+        "id": 5,
+        "bg": "img6.png",
+        "type": "illustration"
+    },
+    {
+        "id": 6,
+        "bg": "img7.png",
+        "type": "illustration"
+    }
+]
