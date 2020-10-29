@@ -114,6 +114,7 @@ const Navigation = () => {
 
         <Link to="/home">Home</Link>
       <Link to="/about">About</Link>
+      {/* <Link to="/tester">Tester</Link> */}
 </motion.div>
       
 <div style={{background: "#131212", width:"100%", color:"peachpuff"}}>

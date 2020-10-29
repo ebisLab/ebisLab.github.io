@@ -36,7 +36,7 @@ export default function Intro() {
                         <motion.div 
                         exit={{opacity: 0}}
                         style={{color:"#131212"}}>Go to <br/>
-                            E.B.'s Folio
+                            Eunice Baiden
                         </motion.div>
                     </div>
                     </a>

@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Main from './components/Main';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
+import Tester from './components/Tester';
 
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/tester" component={Tester} />
           </Switch>
         </AnimatePresence>
 

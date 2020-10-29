@@ -4,6 +4,13 @@ import { motion } from "framer-motion"
 import imgdata from '../data/imgdata.json'
 import {BrowserRouter as Router, Route, Link, Switch, useLocation} from "react-router-dom"
 import {dat} from '../data/newData'
+
+{/* <motion.div className="box" style={{width:"360px", height:"100%", background:`url(/img/pngegg.png)`, backgroundSize:"cover"}} variants={boxitem2}>
+                          
+<div style={{background:"yellow", width:"308px", height:" 200px", position:"relative", left:"25px", top:"-10px" }}></div>
+
+</motion.div>  */}
+
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
 const container = {
@@ -131,7 +138,6 @@ const flower =()=>{
             <li style={{margin: "20px"}} className="submenu" onClick={() => setQuery(null)}>ALL</li>
                     <li data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
-                    {/* <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li> */}
                     {/* <li style={{margin: "20px"}} className="submenu" onClick={filterthrough}>Apps</li> */}
                     <li data-tab="ux" className="submenu"style={{margin: "20px"}} onClick={filterthrough}>UI/UX</li>
                 </ul>
@@ -139,7 +145,7 @@ const flower =()=>{
 
             
             <div 
-            style={{display:"flex", flexWrap:"wrap", flexGrow:0}}>     
+            style={{display:"flex", flexWrap:"wrap", flexGrow: 0}}>     
 
                        {flower()}
 
@@ -147,10 +153,8 @@ const flower =()=>{
                 (query.map((item,key)=> {
              
                   const linked= checked?`url(/img/${item.bg})`:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`
-                  const homepage= checked? "" :item.html_url
               
-                return <motion.a 
-                href={`${homepage}`} 
+                return <a href={`${item.html_url}`}><motion.div 
                 className="box" key={key} info={item} 
                 style={{
                   backgroundImage: linked, 
@@ -159,22 +163,23 @@ const flower =()=>{
                 backgroundSize:"cover"}} 
                 variants={boxitem} 
                 key={item.id}>
-                  <div 
-                  // style={{background:"white"}}
-                  >
-                    {item.name}
+                        {item.name}
                         <div>Github</div>
                     <div>Website</div>
-                  </div>
-                        
-                        </motion.a>}))
+                        </motion.div></a>}))
                         :
 
                         
                 <>
 {                (data.items && data.items.map((item, key)=> (
                     <>
-                <motion.a  href={item.html_url} className="box" key={key} info={item} 
+
+<motion.div className="box" style={{width:"360px", height:"100%", background:`url(/img/pngegg.png)`, backgroundSize:"cover"}} variants={boxitem2}>
+                          
+                          <div style={{background:"yellow", width:"308px", height:" 200px", position:"relative", left:"25px", top:"-10px" }}></div>
+                          
+                          </motion.div>
+                {/* <motion.div className="box" key={key} info={item} 
                 style={{
                   backgroundImage:`url(https://github.com/ebisLab/${item.name}/tree/master/public/img.png/?raw=true)`,
                   width:"100%", 
@@ -183,7 +188,7 @@ const flower =()=>{
                         {item.name}
                         <div>Github 1 </div>
                     <div>Website 1</div>
-                        </motion.a>
+                        </motion.div> */}
                 </>
 
                 
@@ -208,3 +213,5 @@ const flower =()=>{
 
     )
 }
+
+

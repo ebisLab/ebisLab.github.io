@@ -41,11 +41,15 @@ export default function About() {
           >
 
             <div style={{color:"peachpuff"}}>
+              <p>
+                Welcome to E.B.'s Lab where strange experiments are created to soothe the soul.
+              </p>
             <p>
+
                 With so many new technologies being developed in the web development world, who wouldn't want to play around with them?</p>
-               <p> I've dedicated this space as my playground to experiment and see how they pair with the user experience.
-                Some projects showcase my art work ranging from sketches, digital illustrations, graphic design projects; Others are full-on apps I've developed over the years. </p> 
-                <p>Each project I showcase is a reminder that no matter how random or inactive it is, it's brought me closer to being a better developer. 
+               <p> I've dedicated this space to experiment how users can better interact these features.</p>
+                <p> Even though my work is design focused, interacting with different aspects of web development allows me fully express myself. </p> 
+                <p>If you'd like to collaborate, or have a project and are looking for contributors, please email me at ebi@ebisLab.com, I'd love to help out.
                 </p>
             </div>
 
