@@ -96,6 +96,11 @@ export default function Home() {
           setChecked(true)
           return
         }
+        if(e.target.dataset.tab =="wordpress"){
+          setQuery(imgdata.filter(el=>el.type.includes(`${e.target.dataset.tab}`)))
+          setChecked(true)
+          return
+        }
         setQuery(data.items.filter(el=>el.name.includes(`${e.target.dataset.tab}`)))
         setChecked(false)
     }
@@ -131,8 +136,8 @@ const flower =()=>{
             <li style={{margin: "20px"}} className="submenu" onClick={() => setQuery(null)}>ALL</li>
                     <li data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
-                    {/* <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li> */}
-                    {/* <li style={{margin: "20px"}} className="submenu" onClick={filterthrough}>Apps</li> */}
+                    <li data-tab="wordpress" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li>
+                    {/* <li style={{margin: "20px"}} className="submenu" onClick={filterthrough}>Open Source</li> */}
                     <li data-tab="ux" className="submenu"style={{margin: "20px"}} onClick={filterthrough}>UI/UX</li>
                 </ul>
 

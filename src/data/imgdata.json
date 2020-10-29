@@ -19,30 +19,37 @@
     },
     {
         "id": 3,
+        "name": " Old Profile",
+        "bg": "img10.png",
+        "url": "http://wp.ebislab.com",
+        "type": "wordpress"
+    },
+    {
+        "id": 4,
         "name": "TESTERINO",
         "bg": "img4.jpg",
         "type": "illustration"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "TESTERINO",
         "bg": "img5.png",
         "type": "illustration"
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "TESTERINO",
         "bg": "img6.png",
         "type": "illustration"
     },
     {
-        "id": 6,
+        "id": 7,
         "name": "TESTERINO",
         "bg": "img7.png",
         "type": "illustration"
     },
     {
-        "id": 7,
+        "id": 8,
         "name": "Daily UI",
         "bg": "img9.jpg",
         "type": "ux"
