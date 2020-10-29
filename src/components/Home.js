@@ -131,7 +131,7 @@ const flower =()=>{
             <li style={{margin: "20px"}} className="submenu" onClick={() => setQuery(null)}>ALL</li>
                     <li data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
-                    {/* <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li> */}
+                    <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li>
                     {/* <li style={{margin: "20px"}} className="submenu" onClick={filterthrough}>Apps</li> */}
                     <li data-tab="ux" className="submenu"style={{margin: "20px"}} onClick={filterthrough}>UI/UX</li>
                 </ul>
