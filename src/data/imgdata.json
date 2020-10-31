@@ -1,21 +1,24 @@
 [
     {
         "id": 0,
-        "name": "TESTERINO",
+        "name": "Illustrated Celebs",
         "bg": "img.png",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://ebfolio.webs.com/people.htm"
     },
     {
         "id": 1,
-        "name": "TESTERINO",
+        "name": "I am Motherland",
         "bg": "img2.png",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://ebfolio.webs.com/apps/photos/album?albumid=13469516"
     },
     {
         "id": 2,
-        "name": "TESTERINO",
+        "name": "Legend of the Koi Fish",
         "bg": "img3.png",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://ebsfolio.webs.com/koi.htm"
     },
     {
         "id": 3,
@@ -26,32 +29,37 @@
     },
     {
         "id": 4,
-        "name": "TESTERINO",
+        "name": "Sample Work",
         "bg": "img4.jpg",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://ebsfolio.webs.com/ebscorps.htm"
     },
     {
         "id": 5,
-        "name": "TESTERINO",
+        "name": "Browser Illusion",
         "bg": "img5.png",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://codepen.io/ebizl/full/EzZOJd"
     },
     {
         "id": 6,
-        "name": "TESTERINO",
+        "name": "Torus 2 on three.js",
         "bg": "img6.png",
-        "type": "illustration"
+        "type": "illustration",
+        "url": "https://codepen.io/ebizl/full/ZmmMeO"
     },
     {
         "id": 7,
         "name": "TESTERINO",
         "bg": "img7.png",
-        "type": "wordpress"
+        "type": "wordpress",
+        "url": ""
     },
     {
         "id": 8,
         "name": "Daily UI",
         "bg": "img9.jpg",
-        "type": "ux"
+        "type": "ux",
+        "url": "https://codepen.io/collection/XRdPaw"
     }
 ]

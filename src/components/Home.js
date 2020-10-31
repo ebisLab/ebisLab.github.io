@@ -164,13 +164,42 @@ const flower =()=>{
                 backgroundSize:"cover"}} 
                 variants={boxitem} 
                 key={item.id}>
-                  <div 
-                  // style={{background:"white"}}
-                  >
-                    {item.name}
-                        <div>Github</div>
-                    <div>Website</div>
-                  </div>
+                  <motion.div 
+                    
+                    whileHover={{ opacity:1 }}
+                    initial={{
+                      
+                            opacity:0,
+                            background:"#000000d1",
+                            color:"white",
+                            height: "100%",
+                            width: "100%",
+                            padding: "20px",
+                            marginTop: "-20px",
+                            marginLeft: "-20px",
+                            textAlign:"left",
+                            // fontFamily:'Playful Dispair'
+                    }}
+                    // whileHover={{opacity:1}}
+                    >
+                      <div>
+                      <motion.div 
+                      initial={{opacity:0, marginTop:65}}
+                      animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
+                      style={{fontSize:"1.5em", 
+                      padding: "10px",
+                      paddingTop:"23%",
+                      borderBottom: "1px solid lavenderblush",
+                      
+                    }}>{item.name}</motion.div>
+                        <div style={{padding:"10px"}}>{item.language}</div>
+                        <div style={{display:"inline-flex"}}>
+                       <a href={`${item.url}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>
+
+                        </div>
+                    
+                    </div>
+                    </motion.div>
                         
                         </motion.a>}))
                         :
@@ -181,13 +210,50 @@ const flower =()=>{
                     <>
                 <motion.a  href={item.html_url} className="box" key={key} info={item} 
                 style={{
-                  backgroundImage:`url(https://github.com/ebisLab/${item.name}/tree/master/public/img.png/?raw=true)`,
                   width:"100%", 
                   background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, 
-                  backgroundSize:"cover"}} variants={boxitem} key={item.id}>
-                        {item.name}
-                        <div>Github 1 </div>
-                    <div>Website 1</div>
+                  backgroundSize:"cover",
+                  boxShadow: "0px 0px 16px -1px #000000"
+                }} 
+                  variants={boxitem} key={item.id}>
+                    <motion.div 
+                    
+                    whileHover={{ opacity:1 }}
+                    initial={{
+                      
+                            opacity:0,
+                            background:"#000000d1",
+                            color:"white",
+                            height: "100%",
+                            width: "100%",
+                            padding: "20px",
+                            marginTop: "-20px",
+                            marginLeft: "-20px",
+                            textAlign:"left",
+                            // fontFamily:'Playful Dispair'
+                    }}
+                    // whileHover={{opacity:1}}
+                    >
+                      <div>
+                      <motion.div 
+                      initial={{opacity:0, marginTop:65}}
+                      animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
+                      style={{fontSize:"1.5em", 
+                      padding: "10px",
+                      paddingTop:"23%",
+                      borderBottom: "1px solid lavenderblush",
+                      
+                    }}>{item.name}</motion.div>
+                        <div style={{padding:"10px"}}>{item.language}</div>
+                        <div style={{display:"inline-flex"}}>
+                                                 <a href={`${item.html_url}`} style={{padding:5, margin: "5px", background:"lightgrey", color:"black", borderRadius:"5px"}}>Github</a>
+                       <a href={`${item.homepage}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>
+
+                        </div>
+                    
+                    </div>
+                    </motion.div>
+                        
                         </motion.a>
                 </>
 
@@ -196,9 +262,42 @@ const flower =()=>{
                 
                  {imgdata.map(item=>(
                           <motion.div key={item.bg} className="box" style={{width:"100%", background:`url(/img/${item.bg})`, backgroundSize:"cover"}} variants={boxitem2}>
-                          Illustrations
-                          <div>Github</div>
-                      <div>Website</div>
+                          <motion.div 
+                    
+                    whileHover={{ opacity:1 }}
+                    initial={{
+                      
+                            opacity:0,
+                            background:"#000000d1",
+                            color:"white",
+                            height: "100%",
+                            width: "100%",
+                            padding: "20px",
+                            marginTop: "-20px",
+                            marginLeft: "-20px",
+                            textAlign:"left",
+                            // fontFamily:'Playful Dispair'
+                    }}
+                    // whileHover={{opacity:1}}
+                    >
+                      <div>
+                      <motion.div 
+                      initial={{opacity:0, marginTop:65}}
+                      animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
+                      style={{fontSize:"1.5em", 
+                      padding: "10px",
+                      paddingTop:"23%",
+                      borderBottom: "1px solid lavenderblush",
+                      
+                    }}>{item.name}</motion.div>
+                        <div style={{padding:"10px"}}>{item.language}</div>
+                        <div style={{display:"inline-flex"}}>
+                       <a href={`${item.url}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>
+
+                        </div>
+                    
+                    </div>
+                    </motion.div>
                           </motion.div> 
                         ))}    
 

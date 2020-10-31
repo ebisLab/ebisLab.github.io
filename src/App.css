@@ -46,6 +46,10 @@ color:peachpuff;
 margin: 15px
 }
 
+a:link{
+  text-decoration: none;
+}
+
 .about{
   font-size: 3em;
   text-align: left;
