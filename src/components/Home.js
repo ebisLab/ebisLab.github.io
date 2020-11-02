@@ -2,8 +2,7 @@ import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion"
 import imgdata from '../data/imgdata.json'
-import {BrowserRouter as Router, Route, Link, Switch, useLocation} from "react-router-dom"
-import {dat} from '../data/newData'
+import {BrowserRouter as Router, Route, Link, Switch, useLocation, useHistory} from "react-router-dom"
 const transition ={duration: .6, ease:[.6,.01,-.05,.9]}
 
 const container = {
@@ -62,12 +61,16 @@ const container = {
     }
   };
 
+
+
 export default function Home() {
     const [data, setData]=useState([])
     const [freezeScroll,setFeezeScroll]=useState(false)
     const [checked, setChecked]=useState(false)
 
     const [query, setQuery] = useState('')
+    const history=useHistory()
+
 
 
 
@@ -79,6 +82,34 @@ export default function Home() {
             setFeezeScroll(true)
             )
     },[])
+
+
+    const changeMobile=(e)=>{
+      console.log(e.target.value)
+      if(e.target.value =="all"){
+        setQuery(null)
+        return 
+      }
+      if(e.target.value =="illustration"){
+        setQuery(imgdata.filter(el=>el.type.includes(`${e.target.value}`)))
+        setChecked(true)
+        console.log(imgdata)
+        console.log("touched", e.target.value)
+        return
+      }
+      if(e.target.value =="ux"){
+        setQuery(imgdata.filter(el=>el.type.includes(`${e.target.value}`)))
+        setChecked(true)
+        return
+      }
+      if(e.target.value =="wordpress"){
+        setQuery(imgdata.filter(el=>el.type.includes(`${e.target.value}`)))
+        setChecked(true)
+        return
+      }
+      setQuery(data.items.filter(el=>el.name.includes(`${e.target.value}`)))
+      setChecked(false)
+    }
 
 
     const filterthrough = (e)=>{
@@ -107,6 +138,8 @@ export default function Home() {
 
 
 
+
+
 const flower =()=>{
   if(query){
 
@@ -122,25 +155,47 @@ const flower =()=>{
         <motion.div 
         key="1"
         exit={{marginTop:"300px", opacity:0}}  
-        className="container mag"
+        className="container max"
         variants={container}
         transition={transition}
         initial="hidden"
         animate="visible"
-        style={{
-          // background: "lightgrey", 
-          margin: "100px 7% 0px", marginTop:"300px" }}
         >
 
+<div style={{color:"peachpuff"}} className="fullmenu">
             <ul style={{display:"flex", listStyleType:"none", justifyContent:"center", color:"peachpuff", fontFamily:"Reenie Beanie", fontSize:"2em"}}>
             <li style={{margin: "20px"}} className="submenu" onClick={() => setQuery(null)}>ALL</li>
                     <li data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
                     <li data-tab="wordpress" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li>
-                    {/* <li style={{margin: "20px"}} className="submenu" onClick={filterthrough}>Open Source</li> */}
                     <li data-tab="ux" className="submenu"style={{margin: "20px"}} onClick={filterthrough}>UI/UX</li>
                 </ul>
 
+      </div>
+
+<div style={{color:"peachpuff"}} className="mobilemenu">
+<form onChange={changeMobile}>
+        <select name="categories" id="categories" 
+        style={{ background: "none",
+        border: "2px solid peachpuff",
+        width: "80%",
+        height: "50px",
+        color: "peachpuff",
+        paddingBottom: "4px",
+        textTransform: "uppercase",
+        padding: "0 10px",
+        margin: "30px 0",
+        outline: "none"
+      }}
+        >
+          <option value="all"> All </option>
+          <option value="folio">FullStack</option>
+          <option value="illustration">Illustrations</option>
+          <option value="wordpress">Wordpress</option>
+          <option value="ux">UI/UX</option>
+        </select>
+      </form>
+</div>
 
             
             <div 
@@ -167,31 +222,14 @@ const flower =()=>{
                   <motion.div 
                     
                     whileHover={{ opacity:1 }}
-                    initial={{
-                      
-                            opacity:0,
-                            background:"#000000d1",
-                            color:"white",
-                            height: "100%",
-                            width: "100%",
-                            padding: "20px",
-                            marginTop: "-20px",
-                            marginLeft: "-20px",
-                            textAlign:"left",
-                            // fontFamily:'Playful Dispair'
-                    }}
-                    // whileHover={{opacity:1}}
+                    className="hovereffect"
                     >
                       <div>
                       <motion.div 
                       initial={{opacity:0, marginTop:65}}
                       animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
-                      style={{fontSize:"1.5em", 
-                      padding: "10px",
-                      paddingTop:"23%",
-                      borderBottom: "1px solid lavenderblush",
-                      
-                    }}>{item.name}</motion.div>
+                      className="hovereffectplacement"
+                      >{item.name}</motion.div>
                         <div style={{padding:"10px"}}>{item.language}</div>
                         <div style={{display:"inline-flex"}}>
                        <a href={`${item.url}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>
@@ -213,40 +251,21 @@ const flower =()=>{
                   width:"100%", 
                   background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, 
                   backgroundSize:"cover",
-                  boxShadow: "0px 0px 16px -1px #000000"
                 }} 
                   variants={boxitem} key={item.id}>
                     <motion.div 
-                    
                     whileHover={{ opacity:1 }}
-                    initial={{
-                      
-                            opacity:0,
-                            background:"#000000d1",
-                            color:"white",
-                            height: "100%",
-                            width: "100%",
-                            padding: "20px",
-                            marginTop: "-20px",
-                            marginLeft: "-20px",
-                            textAlign:"left",
-                            // fontFamily:'Playful Dispair'
-                    }}
-                    // whileHover={{opacity:1}}
+                    className="hovereffect"
                     >
                       <div>
                       <motion.div 
                       initial={{opacity:0, marginTop:65}}
                       animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
-                      style={{fontSize:"1.5em", 
-                      padding: "10px",
-                      paddingTop:"23%",
-                      borderBottom: "1px solid lavenderblush",
-                      
-                    }}>{item.name}</motion.div>
+                      className="hovereffectplacement"
+                      >{item.name}</motion.div>
                         <div style={{padding:"10px"}}>{item.language}</div>
                         <div style={{display:"inline-flex"}}>
-                                                 <a href={`${item.html_url}`} style={{padding:5, margin: "5px", background:"lightgrey", color:"black", borderRadius:"5px"}}>Github</a>
+                      <a href={`${item.html_url}`} style={{padding:5, margin: "5px", background:"lightgrey", color:"black", borderRadius:"5px"}}>Github</a>
                        <a href={`${item.homepage}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>
 
                         </div>
@@ -265,31 +284,14 @@ const flower =()=>{
                           <motion.div 
                     
                     whileHover={{ opacity:1 }}
-                    initial={{
-                      
-                            opacity:0,
-                            background:"#000000d1",
-                            color:"white",
-                            height: "100%",
-                            width: "100%",
-                            padding: "20px",
-                            marginTop: "-20px",
-                            marginLeft: "-20px",
-                            textAlign:"left",
-                            // fontFamily:'Playful Dispair'
-                    }}
-                    // whileHover={{opacity:1}}
-                    >
+                    className="hovereffect"
+                     >
                       <div>
                       <motion.div 
                       initial={{opacity:0, marginTop:65}}
                       animate={{opacity:1, marginTop:0, trasition: {delay: 6, transition}}}
-                      style={{fontSize:"1.5em", 
-                      padding: "10px",
-                      paddingTop:"23%",
-                      borderBottom: "1px solid lavenderblush",
-                      
-                    }}>{item.name}</motion.div>
+                      className="hovereffectplacement"
+                      >{item.name}</motion.div>
                         <div style={{padding:"10px"}}>{item.language}</div>
                         <div style={{display:"inline-flex"}}>
                        <a href={`${item.url}`} style={{padding:5, background:"darkgrey", margin:"5px", borderRadius:"5px"}}>Live Project</a>

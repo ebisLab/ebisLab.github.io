@@ -54,7 +54,7 @@
 
 
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch, useHistory } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 const transition = { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.9] };
@@ -84,6 +84,7 @@ const trans={
 const Navigation = () => {
   const match = useRouteMatch("/");
   // if (match.isExact) return null;
+  const history = useHistory()
 
 
   const styl={opacity:1}
@@ -114,7 +115,10 @@ const Navigation = () => {
 
         <Link to="/home">Home</Link>
       <Link to="/about">About</Link>
+      
       {/* <Link to="/tester">Tester</Link> */}
+
+
 </motion.div>
       
 <div style={{background: "#131212", width:"100%", color:"peachpuff"}}>

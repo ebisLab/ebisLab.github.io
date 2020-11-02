@@ -3,7 +3,7 @@ import axios from 'axios';
 import { motion } from "framer-motion"
 import imgdata from '../data/imgdata.json'
 import {BrowserRouter as Router, Route, Link, Switch, useLocation} from "react-router-dom"
-import {dat} from '../data/newData'
+
 
 {/* <motion.div className="box" style={{width:"360px", height:"100%", background:`url(/img/pngegg.png)`, backgroundSize:"cover"}} variants={boxitem2}>
                           
