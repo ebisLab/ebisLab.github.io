@@ -176,7 +176,10 @@ const flower =()=>{
 <div style={{color:"peachpuff"}} className="mobilemenu">
 <form onChange={changeMobile}>
         <select name="categories" id="categories" 
-        style={{ background: "none",
+        style={{ 
+          background: "none",
+         WebkitAppearance:"none",
+         MozAppearance:"none",
         border: "2px solid peachpuff",
         width: "80%",
         height: "50px",
