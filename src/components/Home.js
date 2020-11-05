@@ -114,6 +114,7 @@ export default function Home() {
 
     const filterthrough = (e)=>{
         e.preventDefault()
+        console.log("FILTER THROUGH", e.target.value)
         if(e.target.dataset.tab =="illustration"){
           // setQuery(imgdata)
           setQuery(imgdata.filter(el=>el.type.includes(`${e.target.dataset.tab}`)))
@@ -165,7 +166,7 @@ const flower =()=>{
 <div style={{color:"peachpuff"}} className="fullmenu">
             <ul style={{display:"flex", listStyleType:"none", justifyContent:"center", color:"peachpuff", fontFamily:"Reenie Beanie", fontSize:"2em"}}>
             <li style={{margin: "20px"}} className="submenu" onClick={() => setQuery(null)}>ALL</li>
-                    <li data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
+                    <li value="folio" data-tab="folio" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>FullStack</li>
                     <li data-tab="illustration" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Illustrations</li>
                     <li data-tab="wordpress" className="submenu" style={{margin: "20px"}} onClick={filterthrough}>Wordpress</li>
                     <li data-tab="ux" className="submenu"style={{margin: "20px"}} onClick={filterthrough}>UI/UX</li>

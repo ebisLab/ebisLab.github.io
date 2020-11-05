@@ -92,7 +92,9 @@ exit={{width:0, transition:{delay:.8, ...transition}}}
                         fontSize: "96px",  //*need to find way to make this percentage
                         transition:{delay:1.2, ...transition}
                     }
-                        }>E.B.'s Lab</motion.div>
+                        }>E.B.'s Lab
+                        {/* <motion.div initial={{opacity:0}} whileHover={{opacity:1}}>Experimentation playground</motion.div> */}
+                        </motion.div>
                     </div>
                     </Link>
             </div>
