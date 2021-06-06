@@ -210,7 +210,7 @@ const flower =()=>{
                 {query ?
                 (query.map((item,key)=> {
              
-                  const linked= checked?`url(/img/${item.bg})`:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`
+                  const linked= checked?`url(/img/${item.bg})`:`url(https://github.com/ebisLab/${item.name}/${item.default_branch}/master/public/img.png?raw=true)`
                   const homepage= checked? "" :item.html_url
               
                 return <motion.a 
@@ -253,7 +253,7 @@ const flower =()=>{
                 <motion.a  href={item.html_url} className="box" key={key} info={item} 
                 style={{
                   width:"100%", 
-                  background:`url(https://github.com/ebisLab/${item.name}/blob/master/public/img.png?raw=true)`, 
+                  background:`url(https://github.com/ebisLab/${item.name}/blob/${item.default_branch}/public/img.png?raw=true)`, 
                   backgroundSize:"cover",
                 }} 
                   variants={boxitem} key={item.id}>
